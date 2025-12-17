@@ -1,0 +1,71 @@
+{"model": {
+        "name": "FlowX Transformer",
+        "strategy": "FlowX adopts a multimodal learning strategy, combining numerical, categorical, temporal, and textual data to model sales dynamics more accurately.",
+        "inputs": {
+            "numerical_features": [
+                "historical sales",
+                "oil prices",
+                "store transactions"
+            ],
+            "categorical_features": [
+                "store",
+                "product family",
+                "holiday type"
+            ],
+            "text_features": {
+                "source": "holiday descriptions",
+                "embedding_model": "MiniLM",
+                "embedding_dimension": 384
+            },
+            "temporal_features": [
+                "day of week (cyclical encoding)",
+                "month (cyclical encoding)"
+            ]
+        },
+        "architecture": {
+            "type": "Transformer(From Scratch)",
+            "attention_mechanism": "Scaled Dot-Product Attention (QK\u1d40 / \u221ad\u2096)",
+            "multi_head_attention": {
+                "number_of_heads": 8,
+                "purpose": "Capture multiple temporal patterns in parallel"
+            },
+            "encoder": {
+                "layers": 4,
+                "input_window": "30-day historical sequence"
+            },
+            "decoder": {
+                "layers": 2,
+                "forecast_horizon": "16 days"
+            },
+            "fusion_module": "Gated Residual Network for adaptive multimodal fusion",
+            "positional_encoding": "Sinusoidal positional encoding"
+        },
+        "output": {
+            "type": "Quantile Regression",
+            "quantiles": [
+                0.1,
+                0.5,
+                0.9
+            ],
+            "description": "The model predicts multiple quantiles to estimate uncertainty and provide confidence intervals for future sales."
+        }
+    },
+    "explainability": {
+        "methods": [
+            "Attention heatmaps",
+            "Cross-attention analysis"
+        ],
+        "description": "Explainability is achieved through attention visualization, highlighting which past days and events most influence future predictions."
+    },
+    "training": {
+        "optimization": {
+            "mixed_precision": "Automatic Mixed Precision (AMP)",
+            "learning_rate_schedule": "Cosine annealing",
+            "gradient_clipping": true
+        },
+        "regularization": {
+            "early_stopping": "Enabled with patience"
+        },
+        "goal": "Ensure stable training, faster convergence, and improved generalization."
+    }
+}

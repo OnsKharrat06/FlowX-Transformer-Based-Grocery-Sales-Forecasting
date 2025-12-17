@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Data/artifacts (keep large/private stuff out by default)
+data/
+artifacts/latest_forecast.json
+
+artifacts/*.pt
+artifacts/*.pth
+artifacts/*.onnx

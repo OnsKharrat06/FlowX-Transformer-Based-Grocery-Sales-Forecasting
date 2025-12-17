@@ -1,0 +1,10 @@
+{
+  "num_stores": 10,
+  "total_sales": 186707464.68,
+  "num_products": 4026,
+  "avg_daily_sales": 316453.33,
+  "promo_ratio": 0.1568,
+  "sales_volatility": 85887.01,
+  "avg_sales_per_store": 18670746.47,
+  "top_product_share": 0.0107
+}

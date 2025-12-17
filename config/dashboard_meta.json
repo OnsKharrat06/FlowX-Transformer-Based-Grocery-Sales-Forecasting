@@ -1,0 +1,8 @@
+{
+  "app_title": "FlowX \u2013 Transformer-Based Grocery Sales Forecasting",
+  "app_subtitle": "FlowX is an AI-driven demand forecasting system designed to predict daily product sales in grocery stores. The project focuses on capturing complex temporal patterns and external influences to support inventory planning and decision-making.",
+  "dataset_name": "Corporaci\u00f3n Favorita Grocery Sales Forecasting",
+  "dataset_source":"Kaggle Competition Dataset",
+  "training_period": "2016–2017",
+  "dataset_overview": "The dataset originates from a Kaggle competition hosted by Corporaci\u00f3n Favorita, Ecuador\u2019s largest grocery retailer. It contains historical daily sales enriched with promotions, holidays, oil prices, and store transaction data."
+}
